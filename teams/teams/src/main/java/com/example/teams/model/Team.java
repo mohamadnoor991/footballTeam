@@ -21,13 +21,12 @@ public class Team {
     @Column(nullable = false)
     private BigDecimal budget;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "team_players",
-//            joinColumns = @JoinColumn(name = "team_id"),
-//            inverseJoinColumns = @JoinColumn(name = "player_id")
-//    )
-@OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany
+    @JoinTable(
+            name = "team_players",
+            joinColumns = @JoinColumn(name = "team_id"),
+            inverseJoinColumns = @JoinColumn(name = "player_id")
+    )
     private List<Player> players;
 
     public Team() {
