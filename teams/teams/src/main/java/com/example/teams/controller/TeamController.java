@@ -37,6 +37,13 @@ public class TeamController {
         return ResponseEntity.ok(savedTeam);
     }
 
+    @Operation(summary = "Update an existing team")
+    @PutMapping("/{id}")
+    public ResponseEntity<Team> updateTeam(@PathVariable Long id, @RequestBody Team team) {
+        Team updatedTeam = teamService.updateTeam(id, team);
+        return ResponseEntity.ok(updatedTeam);
+    }
+
     @Operation(summary = "Get a team by ID")
     @GetMapping("/{id}")
     public ResponseEntity<Team> getTeamDetails(@PathVariable Long id) {

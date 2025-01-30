@@ -28,6 +28,25 @@ public class TeamService {
         return teamRepository.save(team);
     }
 
+    public Team updateTeam(Long id, Team updatedTeam) {
+        Optional<Team> existingTeamOptional = teamRepository.findById(id);
+
+        if (existingTeamOptional.isPresent()) {
+            Team existingTeam = existingTeamOptional.get();
+
+            // Update fields
+            existingTeam.setName(updatedTeam.getName());
+            existingTeam.setAcronym(updatedTeam.getAcronym());
+            existingTeam.setPlayers(updatedTeam.getPlayers());
+            existingTeam.setBudget(updatedTeam.getBudget());
+
+            // Save updated team
+            return teamRepository.save(existingTeam);
+        } else {
+            throw new RuntimeException("Team with ID " + id + " not found.");
+        }
+    }
+
     public Optional<Team> getTeamDetails(Long id) {
         return teamRepository.findById(id);
     }
