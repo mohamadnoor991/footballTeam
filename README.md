@@ -11,16 +11,16 @@ The techniques that we use in this project are:
 # How to use it  
 First, you should have postgresSQL and IntelliJ IDE.  
 To insert your database into PostgreSQ.   
-    1. Open pgAdmin.
-    2. Select your database.
-    3. Click Query Tool.
-    4. Open the .sql file and execute it.
+    1. Open pgAdmin.  
+    2. Select your database.  
+    3. Click Query Tool.  
+    4. Open the .sql file and execute it.  
 
 Open the IDE and from file -> open -> choose the folder teams.  
 
 # Access and use Swagger  
 To access and test the endpoint by using Swagger, After running the pgAdmin & running the application from IntelliJ go to your browser open the link http://localhost:8082/swagger-ui/index.html  
-![Screenshot 2025-01-30 190132](https://github.com/user-attachments/assets/e3d64473-cbeb-48ff-a14a-cb11bad303ad)
+![image](https://github.com/user-attachments/assets/9789c7cc-bb08-4856-ae9f-413918e115e0)
 
 
 # Examples:  
